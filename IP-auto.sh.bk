@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Where are you right now? "
+
+echo "1. At home."
+echo "2. At school."
+
+read IP
+
+if [ $IP -eq 1 ]
+then
+	sed -i 's/IPADDR=*.*.*.*/IPADDR=192.168.0.143/g' /etc/sysconfig/network-scripts/ifcfg-enp0s3 ; sed -i 's/GATEWAY=*.*.*.*/GATEWAY=192.168.0.1/g' /etc/sysconfig/network-scripts/ifcfg-enp0s3 ; systemctl restart network ; echo "it is ready to use at home"
+
+
+elif [ $IP -eq 2 ]
+then
+
+	sed -i 's/IPADDR=*.*.*.*/IPADDR=192.168.22.10/g' /etc/sysconfig/network-scripts/ifcfg-enp0s3 ; sed -i 's/GATEWAY=*.*.*.*/GATEWAY=192.168.20.1/g' /etc/sysconfig/network-scripts/ifcfg-enp0s3 ; systemctl restart network ; echo "it is ready to use at school"
+
+else
+ echo "You have not set up other IP addresses!"
+
+
+
+fi

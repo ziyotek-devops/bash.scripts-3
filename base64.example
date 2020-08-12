@@ -1,0 +1,6 @@
+# coding of text via base64 and openssl
+
+openssl base54 -in file1 -out file2
+
+# text in file1 gets encripted in file2
+
