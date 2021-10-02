@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "State initials" 
+read "State initials " 
 
 case $REPLY in
 
